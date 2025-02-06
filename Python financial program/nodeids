@@ -1,0 +1,4 @@
+[
+  "test_project.py::test_add_transaction",
+  "test_project.py::test_view_summary_by_category"
+]
