@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ poll.question }}</h2>
+    <form method="post">
+        {% for option in poll.options %}
+            <div>
+                <input type="radio" id="option{{ option.id }}" name="option" value="{{ option.id }}">
+                <label for="option{{ option.id }}">{{ option.text }} ({{ option.votes }} votes)</label>
+            </div>
+        {% endfor %}
+        <button type="submit">Vote</button>
+    </form>
+    <a href="{{ url_for('results', poll_id=poll.id) }}">View Results</a>
+{% endblock %}
